@@ -1,0 +1,19 @@
+{
+  "name": "multiple-semantic-theme-build",
+  "version": "1.0.0",
+  "description": "A proof of concept repository, demonstrating how to build multiple semantic-ui themes in one build.",
+  "scripts": {
+    "postinstall": "ncp build/override-semantic-ui-build.js src/styles/semantic/tasks/build.js",
+    "prebuild": "node_modules/.bin/sass-lint -c config/sasslint.yml -v",
+    "build": "gulp --gulpfile ./styles/semantic/gulpfile.js build && node build/buildScss.js"
+  },
+  "author": "Peineary Development",
+  "license": "MIT",
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
+    "node-sass": "^4.5.3",
+    "sass-lint": "^1.10.2",
+    "semantic-ui": "^2.2.10"
+  }
+}

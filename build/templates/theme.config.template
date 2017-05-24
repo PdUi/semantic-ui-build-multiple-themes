@@ -1,0 +1,55 @@
+@site       : '/*THEME_NAME*/';
+@reset      : '/*THEME_NAME*/';
+
+@button     : '/*THEME_NAME*/';
+@container  : '/*THEME_NAME*/';
+@divider    : '/*THEME_NAME*/';
+@flag       : '/*THEME_NAME*/';
+@header     : '/*THEME_NAME*/';
+@icon       : '/*THEME_NAME*/';
+@image      : '/*THEME_NAME*/';
+@input      : '/*THEME_NAME*/';
+@label      : '/*THEME_NAME*/';
+@list       : '/*THEME_NAME*/';
+@loader     : '/*THEME_NAME*/';
+@rail       : '/*THEME_NAME*/';
+@reveal     : '/*THEME_NAME*/';
+@segment    : '/*THEME_NAME*/';
+@step       : '/*THEME_NAME*/';
+
+@breadcrumb : '/*THEME_NAME*/';
+@form       : '/*THEME_NAME*/';
+@grid       : '/*THEME_NAME*/';
+@menu       : '/*THEME_NAME*/';
+@message    : '/*THEME_NAME*/';
+@table      : '/*THEME_NAME*/';
+
+@accordion  : '/*THEME_NAME*/';
+@checkbox   : '/*THEME_NAME*/';
+@dimmer     : '/*THEME_NAME*/';
+@dropdown   : '/*THEME_NAME*/';
+@embed      : '/*THEME_NAME*/';
+@modal      : '/*THEME_NAME*/';
+@nag        : '/*THEME_NAME*/';
+@popup      : '/*THEME_NAME*/';
+@progress   : '/*THEME_NAME*/';
+@rating     : '/*THEME_NAME*/';
+@search     : '/*THEME_NAME*/';
+@shape      : '/*THEME_NAME*/';
+@sidebar    : '/*THEME_NAME*/';
+@sticky     : '/*THEME_NAME*/';
+@tab        : '/*THEME_NAME*/';
+@transition : '/*THEME_NAME*/';
+
+@ad         : '/*THEME_NAME*/';
+@card       : '/*THEME_NAME*/';
+@comment    : '/*THEME_NAME*/';
+@feed       : '/*THEME_NAME*/';
+@item       : '/*THEME_NAME*/';
+@statistic  : '/*THEME_NAME*/';
+
+@themesFolder : 'themes';
+
+@siteFolder   : 'site/';
+
+@import "theme.less";
