@@ -1,10 +1,11 @@
 var
-  gulp         = require('gulp-help')(require('gulp')),
-  runSequence  = require('run-sequence'),
-  print        = require('gulp-print'),
-  config       = require('./config/user'),
-  install      = require('./config/project/install'),
-  tasks        = []
+  gulp            = require('gulp-help')(require('gulp')),
+  runSequence     = require('run-sequence'),
+  print           = require('gulp-print'),
+  config          = require('./config/user'),
+  install         = require('./config/project/install'),
+  sequentialTasks = [],
+  parallelTasks   = []
 ;
 
 if(config.rtl) {
@@ -14,9 +15,9 @@ require('./collections/build')(gulp);
 
 const themes = require('../../../build/themes.json').themes;
 module.exports = function(callback) {
-    tasks.push('build-javascript');
-    tasks.push('build-assets');
-  for(var i = 0; i < themes.length; i ++) {
+  parallelTasks.push('build-javascript');
+  parallelTasks.push('build-assets');
+  for(var i = 0; i < themes.length; i++) {
     console.info('Building Semantic');
     const theme = themes[i];
 
@@ -36,10 +37,10 @@ module.exports = function(callback) {
       console.error('Cannot find semantic.json. Run "gulp install" to set-up Semantic');
       return 1;
     }
-    tasks.push(`copy theme ${theme}`);
-    tasks.push(`build css ${theme}`);
-    tasks.push(`copy output ${theme}`);
+
+    sequentialTasks.push(`copy theme ${theme}`);
+    sequentialTasks.push(`copy output ${theme}`);
   };
 
-  runSequence(...tasks, callback);
+  runSequence(parallelTasks, ...sequentialTasks, callback);
 };

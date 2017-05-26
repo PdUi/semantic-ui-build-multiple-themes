@@ -1,0 +1,18 @@
+{
+    "extends": "tslint:all",
+    "rules": {
+        "linebreak-style": [true, "CRLF"],
+        "max-line-length": [false],
+        "no-console": [false],
+        "no-inferrable-types": [false],
+        "quotemark": [true, "single"],
+        "strict-boolean-expressions": [
+            true,
+            "allow-null-union",
+            "allow-undefined-union",
+            "allow-string",
+            "allow-number"
+        ],
+        "trailing-comma": [false]
+    }
+}

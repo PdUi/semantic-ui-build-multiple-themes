@@ -1,6 +1,6 @@
-@import './framework/colors';
+@import './site/framework/colors';
 
 $primary-color: /*PRIMARY_COLOR*/;
 $secondary-color: /*SECONDARY_COLOR*/;
 
-@import './site';
+@import './site/site';
