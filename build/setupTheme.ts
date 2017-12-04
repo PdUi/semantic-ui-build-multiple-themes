@@ -74,14 +74,14 @@ const updateJsonFile: (themeName: string) => void = (themeName: string): void =>
 
 const createMainScssFile: (theme: ITheme) => void = (theme: ITheme): void => {
     const themeMainScssTemplateInputFilePath: string = './build/templates/theme.scss.template';
-    const themeMainScssTemplateOutputFilePath: string = `./styles/${theme.name}.scss`;
+    const themeMainScssTemplateOutputFilePath: string = `./styles/site/${theme.name}.scss`;
 
     readFile(themeMainScssTemplateInputFilePath, encoding, (err: NodeJS.ErrnoException, themeMainScssTemplateInputContents: string) => {
         handleError(err);
 
         const themeMainScssTemplateOutputContents: string = themeMainScssTemplateInputContents.replace(/\/\*PRIMARY_COLOR\*\//g, theme.primaryColor.color)
                                                                                               .replace(/\/\*SECONDARY_COLOR\*\//g, theme.secondaryColor.color);
-        writeFile(themeMainScssTemplateOutputFilePath, themeMainScssTemplateOutputContents, encoding, handleError);
+        writeFile(themeMainScssTemplateOutputFilePath, themeMainScssTemplateOutputContents, { encoding }, handleError);
     });
 };
 
@@ -96,7 +96,7 @@ const createThemeConfigFile: (semanticThemesRootDirectory: string, themeName: st
             handleError(fsError);
 
             const themeConfigTemplateOutputContents: string = themeConfigTemplateInputContents.replace(/\/\*THEME_NAME\*\//g, themeName);
-            writeFile(themeConfigTemplateOutputFilePath, themeConfigTemplateOutputContents, encoding, handleError);
+            writeFile(themeConfigTemplateOutputFilePath, themeConfigTemplateOutputContents, { encoding }, handleError);
         });
     });
 };
@@ -116,7 +116,7 @@ const createSiteVariablesFile: (semanticThemesRootDirectory: string, theme: IThe
                                                                                                                     .replace(/\/\*SECONDARY_COLOR_DESCRIPTION\*\//g, theme.secondaryColor.description)
                                                                                                                     .replace(/\/\*PRIMARY_COLOR\*\//g, theme.primaryColor.color)
                                                                                                                     .replace(/\/\*SECONDARY_COLOR\*\//g, theme.secondaryColor.color);
-            writeFile(themeSiteVariablesTemplateOutputFilePath, themeSiteVariablesTemplateFileOutputContents, encoding, handleError);
+            writeFile(themeSiteVariablesTemplateOutputFilePath, themeSiteVariablesTemplateFileOutputContents, { encoding }, handleError);
         });
     });
 };
